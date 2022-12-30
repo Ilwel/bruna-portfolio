@@ -31,6 +31,9 @@ const Container = styled.div`
       height: 4rem;
       opacity: 0.5;
       transition: 0.5s;
+      @media only screen and (max-width: 750px){
+        opacity: 1;
+      }
       :hover{
         opacity: 1;
         transform: scale(1.1);

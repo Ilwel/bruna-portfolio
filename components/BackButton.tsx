@@ -18,6 +18,9 @@ const Container = styled.div`
   justify-content: center;
   cursor: pointer;
   transition: 0.5s;
+  @media only screen and (max-width: 750px){
+    opacity: 1;
+  }
   :hover{
     transform: scale(1.1);
   }

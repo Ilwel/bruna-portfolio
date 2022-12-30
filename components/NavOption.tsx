@@ -12,6 +12,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @media only screen and (max-width: 750px){
+    opacity: 1;
+  }
   img{
     width: 8rem;
     height: 12rem;
