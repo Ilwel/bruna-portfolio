@@ -3,14 +3,17 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import figmaIcon from '../public/icons/figma.svg'
+import googlePhotosIcon from '../public/icons/google-photos.svg'
 
 type ProjectCardProps = {
   project: {
+    isFigma: boolean
     title: string
     description: string,
     img: StaticImageData,
     figmaPrototype: string,
-    figmaProject: string
+    figmaProject: string,
+    link: string
   }
 }
 
@@ -90,18 +93,29 @@ const ProjectCard = (props: ProjectCardProps) => {
           </p>
         </div>
         <div className="bottom-buttons">
-          <Link href={props.project.figmaProject} target='_blank'>
-            <Image src={figmaIcon} alt='figma icon' />
-            <p>
-              Projeto Figma
-            </p>
-          </Link>
-          <Link href={props.project.figmaPrototype} target='_blank'>
-            <Image src={figmaIcon} alt='figma icon' />
-            <p>
-              Protótipo
-            </p>
-          </Link>
+          {props.project.isFigma ? (
+            <>
+              <Link href={props.project.figmaProject} target='_blank'>
+                <Image src={figmaIcon} alt='figma icon' />
+                <p>
+                  Projeto Figma
+                </p>
+              </Link>
+              <Link href={props.project.figmaPrototype} target='_blank'>
+                <Image src={figmaIcon} alt='figma icon' />
+                <p>
+                  Protótipo
+                </p>
+              </Link>
+            </>
+          ) : (
+            <Link href={props.project.link} target='_blank'>
+              <Image src={googlePhotosIcon} alt='figma icon' />
+              <p>
+                Google Fotos
+              </p>
+            </Link>
+          )}
         </div>
       </div>
     </Container>
